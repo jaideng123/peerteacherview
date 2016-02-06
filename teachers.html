@@ -6,172 +6,24 @@
 			<span class="sub-header">Available Peer Teachers</span>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-6" *ngFor="#person of people">
 				<div class="card">
 					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
+						<img [src]="'https://engineering.tamu.edu' + person.imageURL">
 					</div>
 					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
+						<h2>{{person.name}}</h2>
+						<div *ngFor="#class of person.classes">
+						{{class}}
+						</div>
 					</div>
 					<div class="col-sm-4">
 					<h3>Office Hours:</h3>
 					<table class=" table table-condensed">
 						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
-					</div>
-					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
-					</div>
-					<div class="col-sm-4">
-					<h3>Office Hours:</h3>
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
-					</div>
-					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
-					</div>
-					<div class="col-sm-4">
-					<h3>Office Hours:</h3>
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
-					</div>
-					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
-					</div>
-					<div class="col-sm-4">
-					<h3>Office Hours:</h3>
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
-					</div>
-					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
-					</div>
-					<div class="col-sm-4">
-					<h3>Office Hours:</h3>
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
-							</tr>
-						</tbody>
-					</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="col-sm-3">
-						<img src="https://engineering.tamu.edu/media/1594580/Image-of-Jaiden-Gerig.jpg">
-					</div>
-					<div class="col-sm-5">
-						<h2>Jaiden Gerig</h2>
-						CSCE 221-501,507,508
-					</div>
-					<div class="col-sm-4">
-					<h3>Office Hours:</h3>
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>TR</td>
-								<td>2:00-4:00 pm</td>
-							</tr>
-							<tr>
-								<td>Su</td>
-								<td>3:00-5:00 (121 Review)</td>
+							<tr *ngFor="#time of person.hours">
+								<td>{{time.day}}</td>
+								<td>{{time.time}}</td>
 							</tr>
 						</tbody>
 					</table>
