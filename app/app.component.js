@@ -25,18 +25,16 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                     var ctrl = this;
                     this.people = [];
                     this.currentPeople = [];
-                    http.get('js/people.json')
-                        .map(function (res) { return res.json(); })
-                        .subscribe(function (people) { return _this.people = people; });
+                    this.reviewSessions = [];
                     var isNow = function (begin, end) {
                         var currentDay = new Date();
-                        if ((currentDay.getHours() < (Number(begin[0]) - 1)))
+                        if (currentDay.getHours() < (Number(begin[0])))
                             return false;
-                        if ((currentDay.getHours() == (Number(begin[0]) - 1)) && (currentDay.getMinutes() < (Number(begin[1]) - 1)))
+                        if ((currentDay.getHours() == (Number(begin[0]))) && (currentDay.getMinutes() < (Number(begin[1]))))
                             return false;
-                        if ((currentDay.getHours() > (Number(end[0]) - 1)))
+                        if ((currentDay.getHours() > (Number(end[0]))))
                             return false;
-                        if ((currentDay.getHours() == (Number(end[0]) - 1)) && (currentDay.getMinutes() > (Number(end[1]) - 1)))
+                        if ((currentDay.getHours() == (Number(end[0]))) && (currentDay.getMinutes() > (Number(end[1]))))
                             return false;
                         return true;
                     };
@@ -58,8 +56,10 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                         }
                         return false;
                     };
-                    setInterval(function () {
+                    var updateTeachers = function () {
+                        console.log("Checking");
                         var newPeople = [];
+                        var newReviewSessions = [];
                         for (var i = ctrl.people.length - 1; i >= 0; i--) {
                             for (var j = ctrl.people[i].hours.length - 1; j >= 0; j--) {
                                 var normalized = ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(')[0];
@@ -75,12 +75,24 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                                         end[0] = (Number(end[0]) + 12).toString();
                                     correctTime = correctTime || (isNow(begin, end) && isCorrectDay(ctrl.people[i].hours[j].day.split('')));
                                 }
-                                if (correctTime)
+                                if (ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(').length > 1 && isCorrectDay(["S"])) {
+                                    var review = ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(')[1].split(')')[0];
+                                    if (newReviewSessions.indexOf(review) == -1 && review) {
+                                        newReviewSessions.push(review);
+                                    }
+                                }
+                                else if (correctTime)
                                     newPeople.push(ctrl.people[i]);
                             }
-                            ctrl.currentPeople = newPeople;
                         }
-                    }, 3000);
+                        ctrl.currentPeople = newPeople;
+                        ctrl.reviewSessions = newReviewSessions;
+                        console.log(reviewSessions);
+                    };
+                    http.get('js/people.json')
+                        .map(function (res) { return res.json(); })
+                        .subscribe(function (people) { return _this.people = people; }, function (err) { return console.log(err); }, function () { return updateTeachers(); });
+                    setInterval(updateTeachers, 5000);
                 }
                 AppComponent = __decorate([
                     core_1.Component({
