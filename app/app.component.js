@@ -75,7 +75,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                                         end[0] = (Number(end[0]) + 12).toString();
                                     correctTime = correctTime || (isNow(begin, end) && isCorrectDay(ctrl.people[i].hours[j].day.split('')));
                                 }
-                                if (ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(').length > 1 && isCorrectDay(["S"])) {
+                                if (ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(').length > 1 && correctTime && isCorrectDay(['S'])) {
                                     var review = ctrl.people[i].hours[j].time.replace(' ', '').replace('pm', '').replace('am', '').split('(')[1].split(')')[0];
                                     if (newReviewSessions.indexOf(review) == -1 && review) {
                                         newReviewSessions.push(review);
