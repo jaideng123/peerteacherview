@@ -138,7 +138,7 @@
     "classes": ["CSCE 121-501,507,508"],
     "hours": [{
         "day": "Su",
-        "time": "3:00 - 7:00 pm"
+        "time": "3:00-7:00 pm"
     }]
 }, {
     "name": "Troy Edwards",
@@ -388,7 +388,7 @@
         "time": "2:00-3:00 pm"
     }, {
         "day": "R",
-        "time": "9-10 am, 2-3 pm"
+        "time": "9:00-10:00 am, 2:00-3:00 pm"
     }]
 }, {
     "name": "Christopher Ridley",
