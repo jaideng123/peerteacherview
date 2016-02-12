@@ -36,3 +36,12 @@ body{
 	color: #FFF;
 	font-family: 'Roboto', sans-serif;
 }
+.card-header{
+    font-size: 40px;
+}
+.classes-available{
+    font-size: 24px;
+}
+.profile-img{
+    width:100%;
+}

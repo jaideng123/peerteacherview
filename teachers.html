@@ -9,15 +9,15 @@
 			<div class="col-sm-6" *ngFor="#person of currentPeople">
 				<div class="card">
 					<div class="col-sm-3">
-						<img [src]="'https://engineering.tamu.edu' + person.imageURL">
+						<img [src]="'https://engineering.tamu.edu' + person.imageURL" class="profile-img">
 					</div>
-					<div class="col-sm-5">
-						<h2>{{person.name}}</h2>
-						<div *ngFor="#class of person.classes">
-						{{class}}
+					<div class="col-sm-6">
+						<h2 class="card-header">{{person.name}}</h2>
+						<div *ngFor="#class of person.classes" class="classes-available text-center">
+							{{class.split('-')[0]}}
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-3">
 					<h3>Office Hours:</h3>
 					<table class=" table table-condensed">
 						<tbody>
@@ -38,6 +38,11 @@
 					<div class="col-sm-5">
 						
 					</div>
+				</div>
+			</div>
+			<div class="row text-center" *ngIf="currentPeople.length == 0">
+				<div class="short-card">
+					<span class="sub-header">No Peer Teachers Available, Please Come Back Later</span>
 				</div>
 			</div>
 		</div>
