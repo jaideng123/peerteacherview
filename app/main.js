@@ -1,17 +1,5 @@
-System.register(['angular2/platform/browser', './app.component', 'rxjs/add/operator/map'], function(exports_1) {
-    var browser_1, app_component_1;
-    return {
-        setters:[
-            function (browser_1_1) {
-                browser_1 = browser_1_1;
-            },
-            function (app_component_1_1) {
-                app_component_1 = app_component_1_1;
-            },
-            function (_1) {}],
-        execute: function() {
-            browser_1.bootstrap(app_component_1.AppComponent);
-        }
-    }
-});
+"use strict";
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+var app_module_1 = require('./app.module');
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=main.js.map

@@ -6,14 +6,14 @@
 			<span class="sub-header">Available Peer Teachers</span>
 		</div>
 		<div class="row">
-			<div class="col-sm-6" *ngFor="#person of currentPeople">
+			<div class="col-sm-6" *ngFor="let person of currentPeople">
 				<div class="card">
 					<div class="col-sm-3">
-						<img [src]="'https://engineering.tamu.edu' + person.imageURL" class="profile-img">
+						<img [src]=person.pic class="profile-img">
 					</div>
 					<div class="col-sm-6">
 						<h2 class="card-header">{{person.name}}</h2>
-						<div *ngFor="#class of person.classes" class="classes-available text-center">
+						<div *ngFor=" let class of person.classes" class="classes-available text-center">
 							{{class.split('-')[0]}}
 						</div>
 					</div>
@@ -21,7 +21,7 @@
 					<h3>Office Hours:</h3>
 					<table class=" table table-condensed">
 						<tbody>
-							<tr *ngFor="#time of person.hours">
+							<tr *ngFor="let time of person.office_hours">
 								<td>{{time.day}}</td>
 								<td>{{time.time}}</td>
 							</tr>
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6" *ngFor="#session of reviewSessions">
+			<div class="col-sm-6" *ngFor="let session of reviewSessions">
 				<div class="short-card">
 					<div class="col-sm-5">
 						<h2>{{session}}</h2>
