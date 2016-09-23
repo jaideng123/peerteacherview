@@ -11,10 +11,6 @@ try {
 var api_key = keys.parsehub_key || process.env.PARSEHUB_KEY;
 var project_key = keys.project_key || process.env.PROJECT_KEY;
 
-app.get('/', function(req,res){
-	res.sendfile('index.html')
-});
-
 app.get('/api/teachers', function(req,res){
 	  request(
 	    { method: 'GET'
@@ -38,6 +34,9 @@ app.get('/api/teachers', function(req,res){
 	      console.log('received ' + data.length + ' bytes of compressed data');
 	    });
 	  });
+});
+app.get('/', function(req,res){
+	res.sendfile('index.html')
 });
 
 app.use(express.static('.'));
