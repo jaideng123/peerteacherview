@@ -40,7 +40,7 @@ app.get('/', function(req,res){
 });
 
 app.use(express.static('.'));
-var port = process.ENV.PORT || 3000
+var port = process.env.PORT || 3000
 app.listen(port, function () {
   console.log('Example app listening on port '+port);
 });
