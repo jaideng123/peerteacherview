@@ -97,7 +97,7 @@ schedule.scheduleJob('* */3 * * *', function(){
   	updateTeachers();
   	console.log("Run started");
 });
-
+updateTeachers();
 fetchTeachers().then(function(data){teachers = data;});
 app.get('/api/teachers', function(req,res){
 	  res.send(teachers);
