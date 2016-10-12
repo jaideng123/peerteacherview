@@ -86,6 +86,7 @@ var AppComponent = (function () {
         http.get('api/teachers')
             .subscribe(function (people) { return _this.people = JSON.parse(people._body).peer_teachers; }, function (err) { return console.log(err); }, function () { return updateTeachers(); });
         setInterval(updateTeachers, 5000);
+        setInterval(function () { window.location.reload(); }, 180000);
     }
     ;
     AppComponent = __decorate([

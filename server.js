@@ -92,12 +92,15 @@ schedule.scheduleJob('*/1 * * * *', function(){
   	fetchTeachers().then(function(data){teachers = data;});
   	console.log("Peer teachers fetched")
 });
-schedule.scheduleJob('* */3 * * *', function(){
+schedule.scheduleJob('0 */3 * * *', function(){
 	console.log("Starting parsehub run to collect peer teachers")
   	updateTeachers();
   	console.log("Run started");
 });
-fetchTeachers().then(function(data){teachers = data; updateTeachers();})
+
+console.log("Grabbing initial data")
+fetchTeachers().then(function(data){teachers = data;})
+
 app.get('/api/teachers', function(req,res){
 	  res.send(teachers);
 });
