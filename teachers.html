@@ -13,8 +13,8 @@
 					</div>
 					<div class="col-sm-6">
 						<h2 class="card-header">{{person.name}}</h2>
-						<div *ngFor=" let class of person.classes" class="classes-available text-center">
-							{{class.split('-')[0]}}
+						<div *ngFor=" let class of person.class_list" class="classes-available text-center">
+							{{class.name}}
 						</div>
 					</div>
 					<div class="col-sm-3">
