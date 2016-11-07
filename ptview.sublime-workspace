@@ -27,7 +27,23 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 3345,
+				"buffer_size": 2112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "update.js",
+			"settings":
+			{
+				"buffer_size": 1440,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "teachers.json",
+			"settings":
+			{
+				"buffer_size": 13626,
 				"line_ending": "Unix"
 			}
 		},
@@ -36,6 +52,14 @@
 			"settings":
 			{
 				"buffer_size": 3496,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "teachers.html",
+			"settings":
+			{
+				"buffer_size": 1370,
 				"line_ending": "Windows"
 			}
 		},
@@ -113,9 +137,7 @@
 	"expanded_folders":
 	[
 		"/home/jaideng123/peerteacherview",
-		"/home/jaideng123/peerteacherview/app",
-		"/home/jaideng123/peerteacherview/node_modules",
-		"/home/jaideng123/peerteacherview/node_modules/url-join"
+		"/home/jaideng123/peerteacherview/app"
 	],
 	"file_history":
 	[
@@ -208,7 +230,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -217,7 +239,64 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3345,
+						"buffer_size": 2112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "update.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1440,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1440,
+								1440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "teachers.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 13626,
 						"regions":
 						{
 						},
@@ -230,18 +309,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 798.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": "app/app.component.ts",
 					"semi_transient": false,
 					"settings":
@@ -253,8 +333,8 @@
 						"selection":
 						[
 							[
-								3483,
-								3483
+								1294,
+								1294
 							]
 						],
 						"settings":
@@ -263,14 +343,43 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 280.0,
+						"translation.y": 163.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
+					"file": "teachers.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								589,
+								589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
@@ -294,11 +403,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -324,11 +433,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
@@ -354,11 +463,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 8,
 					"file": "keys.js",
 					"semi_transient": false,
 					"settings":
@@ -382,7 +491,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]

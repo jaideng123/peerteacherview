@@ -86,6 +86,5 @@ export class AppComponent {
 		   				() => updateTeachers()
 		 );
 		setInterval(updateTeachers, 5000);
-		setInterval(function(){window.location.reload()}, 180000);
   };
  }
