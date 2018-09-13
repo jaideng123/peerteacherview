@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row text-center">
+    <span class="header">Peer Teacher Central</span>
+  </div>
+  <div class="row">
+    <span class="sub-header">Available Peer Teachers</span>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let person of currentPeople">
+      <div class="card">
+        <div class="col-sm-3">
+          <img *ngIf="person.photoUrl" [src]="person.photoUrl" class="profile-img">
+        </div>
+        <div class="col-sm-6">
+          <h2 class="card-header">{{person.name}}</h2>
+          <div *ngFor=" let class of person.classes" class="classes-available text-center">
+            {{class}}
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h3>Office Hours:</h3>
+          <table class=" table table-condensed">
+            <tbody>
+              <tr *ngFor="let time of person.officeHours">
+                <td>{{convertToDayOfWeekString(time.dayOfWeek)}}</td>
+                <td>{{convertTimeToString(time.start)}} - {{convertTimeToString(time.end)}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center" *ngIf="currentPeople.length == 0">
+      <div class="short-card">
+        <span class="sub-header">No Peer Teachers Available, Please Come Back Later</span>
+      </div>
+    </div>
+  </div>
+</div>
