@@ -24,7 +24,7 @@ export class AppComponent {
       },
       err => console.log(err)
     );
-    // setInterval(() => this.updateTeachers(), 5000);
+    setInterval(() => this.updateTeachers(), 5000);
   }
 
   convertToOfficeHours(entry: string): OfficeHour[] {
