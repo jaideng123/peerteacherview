@@ -2,26 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
-## Development server
+This project contains the front-end and back-end for the peer-teacher display in HRBB
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Back-End
+The Back-End is written in NodeJS using Express, it is mainly responsible for getting the peer teacher data from Parsehub and caching it so that it can be served to the front-end
+It also serves the files for the front-end
+All the code is contained in server.js
 
-## Code scaffolding
+## Front-End
+The Front-End is written in Angular 6 and Typescript and is responsible for formatting the peer teacher data and displaying the active peer teachers. All the code is in the src folder
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Running the project locally
+Make sure you have install [NodeJS](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/get-npm)
+1. Clone the repo to your local machine
+2. run `npm install`
+3. run `npm run dev`
+After that a browser should open up with the app running and will automatically refresh when you make changes to the codebase (except for server.js)
