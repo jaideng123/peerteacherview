@@ -45,6 +45,8 @@ All commits to this repository will automatically be built and deployed to [http
 The heroku console contains the the keys for parsehub in the config vars setting
 
 Heroku will also trigger a daily run of update.js which will trigger a new parsehub crawl
+### How the project works when deployed
+The front-end will be built with the postinstall command in package.json and then the server will serve the files from the dist folder
 
 ## Parsehub
 Parsehub is what crawls the peer teacher webpage and gets all the data that this app uses
