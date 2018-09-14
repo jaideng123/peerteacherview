@@ -4,6 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project contains the front-end and back-end for the peer-teacher display in HRBB
 
+## Contributing
+If Dr. Leyk has told you to work on this project please reach out to me at jaideng123@yahoo.com so I can make you a contributer on this repo and give you the ability to merge code in.
+
+If you have any questions about the code in this project please reach out to me and I will help you to the best of my ability.
+
+Nothing in this application is sacred, feel free to make any changes, fix any bugs you find, rewrite it in react, break things, etc.
+
+
 ## Back-End
 The Back-End is written in NodeJS using Express, it is mainly responsible for getting the peer teacher data from Parsehub and caching it so that it can be served to the front-end
 
