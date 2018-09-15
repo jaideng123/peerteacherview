@@ -18,7 +18,8 @@ import { timeInterval, flatMap, startWith, map } from "rxjs/operators";
 export class AppComponent {
   currentPeople$: Observable<PeerTeacher[]>;
   constructor(private peerTeacherService: PeerTeacherService) {
-    this.currentPeople$ = interval(5000).pipe(
+    // Gets Current active Peer Teachers Every x milliseconds
+    this.currentPeople$ = interval(15000).pipe(
       startWith(0),
       timeInterval(),
       flatMap(() => peerTeacherService.FetchPeerTeachers()),

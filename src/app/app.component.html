@@ -6,7 +6,7 @@
     <span class="sub-header">Available Peer Teachers</span>
   </div>
   <div class="row">
-    <div class="col-sm-6" *ngFor="let person of (currentPeople$ | async)">
+    <div class="col-sm-6" *ngFor="let person of currentPeople$ | async">
       <div class="card">
         <div class="col-sm-3">
           <img *ngIf="person.photoUrl" [src]="person.photoUrl" class="profile-img">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="row text-center" *ngIf="(currentPeople$ | async).length == 0">
+    <div class="row text-center" *ngIf="(currentPeople$ | async) && (currentPeople$ | async).length == 0">
       <div class="short-card">
         <span class="sub-header">No Peer Teachers Available, Please Come Back Later</span>
       </div>

@@ -30,10 +30,9 @@ export function convertResponseToPeerTeachers(response: any[]): PeerTeacher[] {
 
 export function convertToOfficeHours(entry: string): OfficeHour[] {
   entry = entry.toLowerCase();
-  const dayRegex = /[a-z]+day/g;
-  const weekdayName = entry.match(dayRegex)[0].toUpperCase();
+  const weekdayName = extractWeekdayFromString(entry);
   const weekday: DayOfWeek = <DayOfWeek>DayOfWeek[weekdayName.toUpperCase()];
-  entry = entry.replace(dayRegex, "");
+  entry = entry.replace(weekdayName, "");
   entry = stripCharacters(entry, /\s/g, /,/g, /\./g);
   const rawtimes = entry.split("|");
   const officeHours = rawtimes
@@ -43,6 +42,11 @@ export function convertToOfficeHours(entry: string): OfficeHour[] {
       return officeHour;
     });
   return officeHours;
+}
+
+export function extractWeekdayFromString(s: string): string {
+  const dayRegex = /[a-z]+day/g;
+  return s.match(dayRegex)[0];
 }
 
 export function convertTimeToOfficeHour(time: string): OfficeHour {
