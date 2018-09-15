@@ -7,9 +7,7 @@
     "postinstall": "npm run build",
     "dev": "ng serve --open --proxy-config proxy.conf.json & node server.js",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "trigger-crawl": "node update.js"
   },
   "private": true,
   "dependencies": {
